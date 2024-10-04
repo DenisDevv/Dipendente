@@ -1,11 +1,15 @@
 public class TestDipendente {
     public static void main(String[] args) {
-        Dipendente d1 = new Dipendente("00309", 1000, 7.5);
-        d1.setStipendio(1200);
-        d1.setStraordinario(30);
-        double d1Paga = d1.paga(10);
-        double d1Stipendio  = d1.getStipendio();
-        System.out.println("Stipendio: " + d1Stipendio + ", paga: " + d1Paga);
-        System.out.println(d1.stampa());
+        Dipendente[] dipendenti = new Dipendente[3];
+        for (int i = 0; i < dipendenti.length; i++) {
+            dipendenti[i] = new Dipendente("0000", 0, 0);
+            dipendenti[i].setStipendio(Math.floor(Math.random() * 2000) + 600);
+            dipendenti[i].setStraordinario(Math.floor(Math.random() * 20));
+            dipendenti[i].setMatricola("D"+Math.floor(Math.random() * 9999));
+        }
+        for (Dipendente dipendente : dipendenti) {
+            System.out.println(dipendente.stampa());
+            System.out.println("Paga: " + dipendente.paga((int) Math.floor(Math.random() * 20)));
+        }
     }
 }
