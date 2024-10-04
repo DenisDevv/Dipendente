@@ -10,6 +10,21 @@ public class Dipendente {
     public double getStipendio() {
         return stipendio;
     }
+    public double getStraordinario() {
+        return straordinario;
+    }
+    public String getMatricola() {
+        return matricola;
+    }
+    public void setStipendio(double stipendio) {
+        this.stipendio = stipendio;
+    }
+    public void setStraordinario(double straordinario) {
+        this.straordinario = straordinario;
+    }
+    public void setMatricola(String matricola) {
+        this.matricola = matricola;
+    }
     public double paga(int ore) {
         return stipendio + straordinario * ore;
     }
